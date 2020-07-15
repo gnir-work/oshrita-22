@@ -1,4 +1,5 @@
 .egg-container {
+    position: relative;
     background-color: black;
     width: 125px;
     height: 200px;
@@ -13,12 +14,39 @@
 	width: 125px;
 	height: 200px;
     background-color: white;
-	-webkit-border-radius: 50%/60% 60% 40% 40%;
-	-moz-border-radius: 50%/60% 60% 40% 40%;
 	border-radius: 50%/60% 60% 40% 40%;
+}
 
+.crack {
+    position: absolute;
+    top: 0;
+    background-color: black;
+    width: 125px;
+    height: 200px;
+    border-radius: 50%/60% 60% 40% 40%;
 }
 
 .crack1 {
-    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0, 43% 0, 46% 35%, 46% 0);
+    clip-path: polygon(41% 0, 36% 14%, 47% 30%, 39% 14%);
+
+}
+
+.crack2 {
+    clip-path: polygon(100% 10%, 62% 21%, 56% 28%, 39% 52%, 60% 18%);
+}
+
+.crack3 {
+    clip-path: polygon(47% 60%, 59% 68%, 64% 87%, 75% 100%, 62% 87%, 58% 70%);
+}
+
+.crack4 {
+    clip-path: polygon(34% 38%, 41% 29%, 35% 38%, 29% 63%, 39% 75%, 29% 67%, 0 77%, 27% 65%);
+}
+
+.crack5 {
+    clip-path: polygon(58% 48%, 83% 44%, 100% 50%, 82% 45%, 59% 49%, 45% 59%);
+}
+
+.crack6 {
+    clip-path: polygon(13% 7%, 15% 32%, 19% 45%, 23% 51%, 18% 46%, 14% 34%);
 }
