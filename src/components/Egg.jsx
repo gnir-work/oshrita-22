@@ -1,16 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import _, { random } from 'lodash';
 
 import "./Egg.scss";
 
-export const Egg = () => (
-    <div className="egg-container">
-        <div className="egg">
-            <div className="crack crack1" />
-            <div className="crack crack2" />
-            <div className="crack crack3" />
-            <div className="crack crack4" />
-            <div className="crack crack5" />
-            <div className="crack crack6" />
+const NUMBER_OF_CRACKS = 5;
+
+export const Egg = () => {
+    const [cracks, setCracks] = useState([]);
+
+    const handleHit = () => {
+        if (cracks.length === NUMBER_OF_CRACKS) {
+            return;
+        }
+        
+        let crack = random(1, NUMBER_OF_CRACKS);
+        while (cracks.includes(crack)) {
+            crack = random(1, NUMBER_OF_CRACKS);
+        }
+        setCracks([...cracks, crack]);
+    }
+
+    return (
+        <div className="egg-container">
+            <div onClick={handleHit} className="egg">
+                {
+                    cracks.map(crackNumber => (
+                        <div className={`crack crack${crackNumber}`} />
+                    ))
+                }
+            </div>
         </div>
-    </div>
-);
+    );
+};
