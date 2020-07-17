@@ -7,22 +7,22 @@ const EGGS = [
     {
         left: 200,
         top: 300,
-        width: 75,
-        height: 100,
+        width: 50,
+        height: 66,
         cracks: 0,
     },
     {
         left: 400,
         top: 300,
-        width: 75,
-        height: 100,
+        width: 50,
+        height: 66,
         cracks: 0,
     },
     {
         left: 600,
         top: 300,
-        width: 75,
-        height: 100,
+        width: 50,
+        height: 66,
         cracks: 0,
     },
 ];
