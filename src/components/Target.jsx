@@ -30,8 +30,9 @@ const DIRECTION_TO_VECTOR = {
 };
 
 const SPEED = 2;
+const TARGET_SIZE = 50;
 
-export const Target = () => {
+export const Target = ({ onShoot }) => {
     const targetRef = useRef(null);
     const [position, setPosition] = useState({
         left: 50,
@@ -51,9 +52,17 @@ export const Target = () => {
         setPosition(newPosition);
     };
 
+    const shoot = ({ x, y }) => {
+        const shootLocation = {
+            x: x + TARGET_SIZE / 2,
+            y: y + TARGET_SIZE / 2
+        }
+        onShoot(shootLocation);
+    }
+
     const handleKeyBoardEvent = (event) => {
       if (event.keyCode === ENTER) {
-            // Fire
+            shoot(event.target.getBoundingClientRect());
         } else if (DIRECTION_TO_VECTOR[event.keyCode]) {
             const vector = DIRECTION_TO_VECTOR[event.keyCode];
             move(vector);
@@ -65,6 +74,8 @@ export const Target = () => {
     return (
         <TargetIcon
             style={{ left: `${position.left}%`, top: `${position.top}%` }}
+            width={TARGET_SIZE}
+            height={TARGET_SIZE}
             className="target-icon"
             tabIndex={0}
             onKeyDown={handleKeyBoardEvent}
