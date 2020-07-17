@@ -1,10 +1,14 @@
 import React from 'react';
 import { Egg } from "./components/Egg";
 import './App.css';
+import { Target } from './components/Target';
 
 function App() {
   return (
-    <Egg />
+    <content>
+      <Egg />
+      <Target />
+    </content>
   );
 }
 
