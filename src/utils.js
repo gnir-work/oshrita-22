@@ -2,10 +2,10 @@ import { random, clamp } from "lodash";
 import { EGG_MAX_SPEED } from "./consts";
 
 export const checkHit = (egg, shootLocation) => {
-    const eggLeft = egg.left - egg.width;
-    const eggTop = egg.top - egg.height;
-    const eggRight = egg.left + egg.width;
-    const eggBottom = egg.top + egg.height;
+    const eggLeft = egg.x - egg.width;
+    const eggTop = egg.y - egg.height;
+    const eggRight = egg.x + egg.width;
+    const eggBottom = egg.y + egg.height;
     return (
         eggLeft < shootLocation.x &&
         shootLocation.x < eggRight &&
@@ -23,11 +23,11 @@ export const getRandomSpeed = (currentSpeed) => {
 };
 
 export const getNextEggLocation = (egg) => ({
-    left:
-        (window.innerWidth - 100 + egg.left + egg.speed.x) %
+    x:
+        (window.innerWidth - 100 + egg.x + egg.speed.x) %
         (window.innerWidth - 100),
-    top:
-        (window.innerHeight - 100 + egg.top + egg.speed.y) %
+    y:
+        (window.innerHeight - 100 + egg.y + egg.speed.y) %
         (window.innerHeight - 100),
 });
 

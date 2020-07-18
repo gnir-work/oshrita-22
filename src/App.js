@@ -15,8 +15,8 @@ import { MAX_NUMBER_OF_CRACKS, TARGET_SIZE, ENTER } from "./consts";
 function App() {
     const [eggs, setEggs] = useState(EGGS);
     const [position, setPosition] = useState({
-        left: 50,
-        top: 50,
+        x: 50,
+        y: 50,
     });
     const contentRef = useRef(null);
 
@@ -59,13 +59,15 @@ function App() {
 
     const shoot = () => {
         const shootLocation = {
-            x: position.left + TARGET_SIZE / 2,
-            y: position.top + TARGET_SIZE / 2,
+            x: position.x + TARGET_SIZE / 2,
+            y: position.y + TARGET_SIZE / 2,
         };
         handleShoot(shootLocation);
     };
 
     const handleKeyBoardEvent = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
         if (event.keyCode === ENTER) {
             shoot();
         } else {
@@ -75,8 +77,8 @@ function App() {
 
     const handleMouseMove = (event) => {
         setPosition({
-            left: event.clientX,
-            top: event.clientY,
+            x: event.clientX,
+            y: event.clientY,
         });
     };
 
@@ -87,13 +89,13 @@ function App() {
             onKeyDown={handleKeyBoardEvent}
             ref={contentRef}
         >
-            {eggs.map(({ cracks, left, top, width, height, color }, index) => (
+            {eggs.map(({ cracks, x, y, width, height, color }, index) => (
                 <Egg
                     color={color}
                     key={index}
                     cracks={cracks}
-                    left={left}
-                    top={top}
+                    x={x}
+                    y={y}
                     width={width}
                     height={height}
                 />

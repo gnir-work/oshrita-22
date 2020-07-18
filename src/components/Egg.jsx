@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import classNames from "classnames";
-import { random } from "lodash";
 
 import "./Egg.scss";
-import { MAX_NUMBER_OF_CRACKS } from "../consts";
 
 export const Egg = ({
     className,
-    left,
-    top,
+    x,
+    y,
     width,
     height,
     cracks,
@@ -27,8 +25,8 @@ export const Egg = ({
         <div
             className="egg-container"
             style={{
-                left: `${left}px`,
-                top: `${top}px`,
+                left: `${x}px`,
+                top: `${y}px`,
             }}
         >
             <div
