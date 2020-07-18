@@ -6,7 +6,8 @@ import "./Egg.scss";
 import { MAX_NUMBER_OF_CRACKS } from "../consts";
 
 
-export const Egg = ({ className, left, top, width, height, numOfCracks }) => {
+export const Egg = ({ className, left, top, width, height, numOfCracks, color }) => {
+    console.log(color);
     const [cracks, setCracks] = useState([]);
     const [isShaking, setIsShaking] = useState(false);
 
@@ -24,7 +25,7 @@ export const Egg = ({ className, left, top, width, height, numOfCracks }) => {
         setTimeout(() => {
             setIsShaking(false);
         }, 500);
-        
+
         setCracks([...cracks, crack]);
     }, [numOfCracks]);
 
@@ -40,6 +41,7 @@ export const Egg = ({ className, left, top, width, height, numOfCracks }) => {
                 style={{
                     height: `${height}px`,
                     width: `${width}px`,
+                    backgroundColor: color
                 }}
                 className={classNames("egg", className, {
                     "shake-animation": isShaking,

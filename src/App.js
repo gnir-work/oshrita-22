@@ -35,8 +35,9 @@ function App() {
 
     return (
         <content>
-            {eggs.map(({ cracks, left, top, width, height }, index) => (
+            {eggs.map(({ cracks, left, top, width, height, color }, index) => (
                 <Egg
+                    color={color}
                     key={index}
                     numOfCracks={cracks}
                     left={left}

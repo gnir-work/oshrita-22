@@ -12,6 +12,7 @@ export default [
             x: random(2, 5, true),
             y: random(2, 5, true),
         },
+        color: "white"
     },
     {
         left: 400,
@@ -23,6 +24,7 @@ export default [
             x: random(2, 5, true),
             y: random(2, 5, true),
         },
+        color: "red"
     },
     {
         left: 600,
@@ -34,6 +36,7 @@ export default [
             x: random(-5, 5, true),
             y: random(-5, 5, true),
         },
+        color: "blue"
     },
     {
         left: 600,
@@ -45,6 +48,7 @@ export default [
             x: random(-5, 5, true),
             y: random(-5, 5, true),
         },
+        color: "orange"
     },
     {
         left: 600,
@@ -56,6 +60,7 @@ export default [
             x: random(-5, 5, true),
             y: random(-5, 5, true),
         },
+        color: "blue"
     },
     {
         left: 600,
@@ -67,6 +72,7 @@ export default [
             x: random(-5, 5, true),
             y: random(-5, 5, true),
         },
+        color: "green"
     },
     {
         left: 600,
@@ -78,5 +84,6 @@ export default [
             x: random(-5, 5, true),
             y: random(-5, 5, true),
         },
+        color: "darkred"
     },
 ];
