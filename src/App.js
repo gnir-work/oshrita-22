@@ -2,9 +2,15 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Egg } from "./components/Egg";
 import { Target } from "./components/Target";
 import EGGS from "./eggs";
-import { getRandomSpeed, checkHit, getNextEggLocation } from "./utils";
+import {
+    getRandomSpeed,
+    checkHit,
+    getNextEggLocation,
+    getRandomNumber,
+} from "./utils";
 
 import "./App.css";
+import { MAX_NUMBER_OF_CRACKS } from "./consts";
 
 function App() {
     const [eggs, setEggs] = useState(EGGS);
@@ -28,9 +34,18 @@ function App() {
     const handleShoot = (shootLocation) => {
         const newEggs = eggs.map((egg) => ({
             ...egg,
-            cracks: checkHit(egg, shootLocation) ? egg.cracks + 1 : egg.cracks,
+            cracks: checkHit(egg, shootLocation)
+                ? [
+                      ...egg.cracks,
+                      getRandomNumber(egg.cracks, 1, MAX_NUMBER_OF_CRACKS),
+                  ]
+                : egg.cracks,
         }));
-        setEggs(newEggs);
+        const aliveEggs = newEggs.filter(
+            (egg) => egg.cracks.length < MAX_NUMBER_OF_CRACKS
+        );
+
+        setEggs(aliveEggs);
     };
 
     return (
@@ -39,7 +54,7 @@ function App() {
                 <Egg
                     color={color}
                     key={index}
-                    numOfCracks={cracks}
+                    cracks={cracks}
                     left={left}
                     top={top}
                     width={width}

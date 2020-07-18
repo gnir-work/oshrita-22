@@ -7,7 +7,7 @@ export default [
         top: 300,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
-        cracks: 0,
+        cracks: [],
         speed: {
             x: random(2, 5, true),
             y: random(2, 5, true),
@@ -19,7 +19,7 @@ export default [
         top: 300,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
-        cracks: 0,
+        cracks: [],
         speed: {
             x: random(2, 5, true),
             y: random(2, 5, true),
@@ -31,7 +31,7 @@ export default [
         top: 300,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
-        cracks: 0,
+        cracks: [],
         speed: {
             x: random(-5, 5, true),
             y: random(-5, 5, true),
@@ -43,7 +43,7 @@ export default [
         top: 300,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
-        cracks: 0,
+        cracks: [],
         speed: {
             x: random(-5, 5, true),
             y: random(-5, 5, true),
@@ -55,7 +55,7 @@ export default [
         top: 300,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
-        cracks: 0,
+        cracks: [],
         speed: {
             x: random(-5, 5, true),
             y: random(-5, 5, true),
@@ -67,7 +67,7 @@ export default [
         top: 300,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
-        cracks: 0,
+        cracks: [],
         speed: {
             x: random(-5, 5, true),
             y: random(-5, 5, true),
@@ -79,7 +79,7 @@ export default [
         top: 300,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
-        cracks: 0,
+        cracks: [],
         speed: {
             x: random(-5, 5, true),
             y: random(-5, 5, true),

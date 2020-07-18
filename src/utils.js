@@ -30,3 +30,11 @@ export const getNextEggLocation = (egg) => ({
         (window.innerHeight - 100 + egg.top + egg.speed.y) %
         (window.innerHeight - 100),
 });
+
+export const getRandomNumber = (blackList, from, to) => {
+    let number = random(from, to);
+    while (blackList.includes(number)) {
+        number = random(from, to);
+    }
+    return number;
+};

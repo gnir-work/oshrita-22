@@ -5,29 +5,23 @@ import { random } from "lodash";
 import "./Egg.scss";
 import { MAX_NUMBER_OF_CRACKS } from "../consts";
 
-
-export const Egg = ({ className, left, top, width, height, numOfCracks, color }) => {
-    console.log(color);
-    const [cracks, setCracks] = useState([]);
+export const Egg = ({
+    className,
+    left,
+    top,
+    width,
+    height,
+    cracks,
+    color,
+}) => {
     const [isShaking, setIsShaking] = useState(false);
 
     useEffect(() => {
-        if (cracks.length === MAX_NUMBER_OF_CRACKS || numOfCracks === 0) {
-            return;
-        }
-
-        let crack = random(1, MAX_NUMBER_OF_CRACKS);
-        while (cracks.includes(crack)) {
-            crack = random(1, MAX_NUMBER_OF_CRACKS);
-        }
-
         setIsShaking(true);
         setTimeout(() => {
             setIsShaking(false);
         }, 500);
-
-        setCracks([...cracks, crack]);
-    }, [numOfCracks]);
+    }, [cracks]);
 
     return (
         <div
@@ -41,7 +35,7 @@ export const Egg = ({ className, left, top, width, height, numOfCracks, color })
                 style={{
                     height: `${height}px`,
                     width: `${width}px`,
-                    backgroundColor: color
+                    backgroundColor: color,
                 }}
                 className={classNames("egg", className, {
                     "shake-animation": isShaking,
