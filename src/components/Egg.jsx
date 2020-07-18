@@ -47,6 +47,7 @@ export const Egg = ({ className, left, top, width, height, numOfCracks }) => {
             >
                 {cracks.map((crackNumber) => (
                     <div
+                        key={crackNumber}
                         style={{ width: `${width}px`, height: `${height}px` }}
                         className={`crack crack${crackNumber}`}
                     />
