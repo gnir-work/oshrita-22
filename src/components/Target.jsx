@@ -8,7 +8,6 @@ const LEFT = 37;
 const UP = 38;
 const RIGHT = 39;
 const DOWN = 40;
-const ENTER = 32;
 
 const DIRECTION_TO_VECTOR = {
     [LEFT]: {
@@ -32,25 +31,15 @@ const DIRECTION_TO_VECTOR = {
 const SPEED = 2;
 const TARGET_SIZE = 50;
 
-export const Target = ({ onShoot }) => {
-    const targetRef = useRef(null);
-    const [position, setPosition] = useState({
-        left: 50,
-        top: 50,
-    });
+export const Target = ({ onShoot, position }) => {
 
-    useEffect(() => {
-        targetRef.current.focus();
-        console.log(targetRef);
-    }, []);
-
-    const move = (vector) => {
-        const newPosition = {
-            left: _.clamp(position.left + vector.left * SPEED, 5, 95),
-            top: _.clamp(position.top + vector.top * SPEED, 5, 95)
-        };
-        setPosition(newPosition);
-    };
+    // const move = (vector) => {
+    //     const newPosition = {
+    //         left: _.clamp(position.left + vector.left * SPEED, 5, 95),
+    //         top: _.clamp(position.top + vector.top * SPEED, 5, 95)
+    //     };
+    //     setPosition(newPosition);
+    // };
 
     const shoot = ({ x, y }) => {
         const shootLocation = {
@@ -60,26 +49,23 @@ export const Target = ({ onShoot }) => {
         onShoot(shootLocation);
     }
 
-    const handleKeyBoardEvent = (event) => {
-      if (event.keyCode === ENTER) {
-            shoot(event.target.getBoundingClientRect());
-        } else if (DIRECTION_TO_VECTOR[event.keyCode]) {
-            const vector = DIRECTION_TO_VECTOR[event.keyCode];
-            move(vector);
-        } else {
-            // Ignore unsupported keys.
-        }
-    };
+    // const handleKeyBoardEvent = (event) => {
+    //   if (event.keyCode === ENTER) {
+    //         shoot(event.target.getBoundingClientRect());
+    //     } else if (DIRECTION_TO_VECTOR[event.keyCode]) {
+    //         const vector = DIRECTION_TO_VECTOR[event.keyCode];
+    //         move(vector);
+    //     } else {
+    //         // Ignore unsupported keys.
+    //     }
+    // };
 
     return (
         <TargetIcon
-            style={{ left: `${position.left}%`, top: `${position.top}%` }}
+            style={{ left: `${position.left}px`, top: `${position.top}px` }}
             width={TARGET_SIZE}
             height={TARGET_SIZE}
             className="target-icon"
-            tabIndex={0}
-            onKeyDown={handleKeyBoardEvent}
-            ref={targetRef}
         />
     );
 };

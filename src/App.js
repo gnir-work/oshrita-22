@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { Egg } from "./components/Egg";
 import { Target } from "./components/Target";
 import EGGS from "./eggs";
@@ -10,10 +10,19 @@ import {
 } from "./utils";
 
 import "./App.css";
-import { MAX_NUMBER_OF_CRACKS } from "./consts";
+import { MAX_NUMBER_OF_CRACKS, TARGET_SIZE, ENTER } from "./consts";
 
 function App() {
     const [eggs, setEggs] = useState(EGGS);
+    const [position, setPosition] = useState({
+        left: 50,
+        top: 50,
+    });
+    const contentRef = useRef(null);
+
+    useEffect(() => {
+        contentRef.current.focus();
+    }, []);
 
     const moveEggs = useCallback(() => {
         const newEggs = eggs.map((egg) => ({
@@ -48,8 +57,36 @@ function App() {
         setEggs(aliveEggs);
     };
 
+    const shoot = () => {
+        const shootLocation = {
+            x: position.left + TARGET_SIZE / 2,
+            y: position.top + TARGET_SIZE / 2,
+        };
+        handleShoot(shootLocation);
+    };
+
+    const handleKeyBoardEvent = (event) => {
+        if (event.keyCode === ENTER) {
+            shoot();
+        } else {
+            // Ignore unsupported keys.
+        }
+    };
+
+    const handleMouseMove = (event) => {
+        setPosition({
+            left: event.clientX,
+            top: event.clientY,
+        });
+    };
+
     return (
-        <content>
+        <content
+            tabIndex={0}
+            onMouseMove={handleMouseMove}
+            onKeyDown={handleKeyBoardEvent}
+            ref={contentRef}
+        >
             {eggs.map(({ cracks, left, top, width, height, color }, index) => (
                 <Egg
                     color={color}
@@ -61,7 +98,7 @@ function App() {
                     height={height}
                 />
             ))}
-            <Target onShoot={handleShoot} />
+            <Target position={position} onShoot={handleShoot} />
         </content>
     );
 }
