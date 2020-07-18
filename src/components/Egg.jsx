@@ -3,28 +3,28 @@ import classNames from "classnames";
 import { random } from "lodash";
 
 import "./Egg.scss";
+import { MAX_NUMBER_OF_CRACKS } from "../consts";
 
-const NUMBER_OF_CRACKS = 5;
 
 export const Egg = ({ className, left, top, width, height, numOfCracks }) => {
     const [cracks, setCracks] = useState([]);
     const [isShaking, setIsShaking] = useState(false);
 
     useEffect(() => {
-        console.log(numOfCracks)
-        if (cracks.length === NUMBER_OF_CRACKS || numOfCracks === 0) {
+        if (cracks.length === MAX_NUMBER_OF_CRACKS || numOfCracks === 0) {
             return;
         }
 
-        let crack = random(1, NUMBER_OF_CRACKS);
+        let crack = random(1, MAX_NUMBER_OF_CRACKS);
         while (cracks.includes(crack)) {
-            crack = random(1, NUMBER_OF_CRACKS);
+            crack = random(1, MAX_NUMBER_OF_CRACKS);
         }
 
         setIsShaking(true);
         setTimeout(() => {
             setIsShaking(false);
         }, 500);
+        
         setCracks([...cracks, crack]);
     }, [numOfCracks]);
 
