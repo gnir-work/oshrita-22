@@ -19,6 +19,7 @@ function App() {
         x: 50,
         y: 50,
     });
+    const [isCardOpen, setIsCardOpen] = useState(false);
     const contentRef = useRef(null);
 
     useEffect(() => {
@@ -35,11 +36,13 @@ function App() {
     }, [eggs]);
 
     useEffect(() => {
-        const eggsInterval = setInterval(moveEggs, 20);
-        return () => {
-            clearInterval(eggsInterval);
-        };
-    }, [moveEggs]);
+        if (isCardOpen) {
+            const eggsInterval = setInterval(moveEggs, 20);
+            return () => {
+                clearInterval(eggsInterval);
+            };
+        }
+    }, [moveEggs, isCardOpen]);
 
     const handleShoot = (shootLocation) => {
         const newEggs = eggs.map((egg) => ({
@@ -84,6 +87,10 @@ function App() {
         });
     };
 
+    const openCard = () => {
+        setIsCardOpen(true);
+    };
+
     return (
         <>
             <content
@@ -92,19 +99,26 @@ function App() {
                 onKeyDown={handleKeyBoardEvent}
                 ref={contentRef}
             >
-                {eggs.map(({ cracks, x, y, width, height, color }, index) => (
-                    <Egg
-                        color={color}
-                        key={index}
-                        cracks={cracks}
-                        x={x}
-                        y={y}
-                        width={width}
-                        height={height}
-                    />
-                ))}
+                {isCardOpen &&
+                    eggs.map(
+                        ({ cracks, x, y, width, height, color }, index) => (
+                            <Egg
+                                color={color}
+                                key={index}
+                                cracks={cracks}
+                                x={x}
+                                y={y}
+                                width={width}
+                                height={height}
+                            />
+                        )
+                    )}
                 <Target position={position} onShoot={handleShoot} />
-                <Card />
+                <Card
+                    open={isCardOpen}
+                    openCard={openCard}
+                    shownParagraphs={[]}
+                />
             </content>
         </>
     );

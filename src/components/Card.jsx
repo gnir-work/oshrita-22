@@ -1,18 +1,27 @@
-import React, { memo, useRef, useEffect, useState } from "react";
+import React, { memo, useState } from "react";
 
 import "./Card.scss";
 
-export default memo(() => {
-    const [open, setOpen] = useState(false);
+const PARAGRAPHS = [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    "Amet risus nullam eget felis eget",
+    "Massa placerat duis ultricies lacus sed turpis tincidunt id aliquet",
+    "Ullamcorper sit amet risus nullam eget felis",
+    "Feugiat pretium nibh ipsum consequat nisl vel",
+    "Nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum",
+    "Enim sit amet venenatis urna",
+    "Odio aenean sed adipiscing diam donec adipiscing tristique",
+    "Fermentum leo vel orci porta",
+    "Urna condimentum mattis pellentesque id nibh tortor id aliquet",
+    "Nibh ipsum consequat nisl vel pretium lectus quam id",
+    "Nibh nisl condimentum id venenatis a condimentum vitae sapien pellentesque",
+    "Morbi tincidunt augue interdum velit euismod in pellentesque massa placerat",
+    "Non sodales neque sodales ut etiam",
+];
 
-    console.log('rendered')
-
-    const openCard = () => {
-        setOpen(!open);
-    }
-
+export default memo(({ open, openCard, shownParagraphs }) => {
     return (
-        <div onClick={openCard} class={`card ${open ? 'open' : 'closed'}`}>
+        <div onClick={openCard} class={`card ${open ? "open" : "closed"}`}>
             <div class="back"></div>
             <div class="front">
                 <div class="cover-shape-large">
@@ -39,34 +48,9 @@ export default memo(() => {
             </div>
 
             <div class="text-container">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                mi eros, vehicula sit amet porttitor eu, facilisis vel sem.
-                Mauris in urna quis justo viverra pellentesque et vel sem.
-                Pellentesque non urna a lorem fringilla porttitor. Sed in massa
-                ex. Morbi iaculis vulputate nulla. Morbi vitae nisl bibendum,
-                tempus libero sit amet, rutrum metus. Fusce ut eros nisi.
-                Pellentesque ac velit interdum, mollis ex at, ullamcorper quam.
-                Pellentesque fermentum felis et pellentesque vehicula. Nulla in
-                augue eget odio dapibus dignissim. Proin at nisl sed metus
-                tempus laoreet. Nulla eu urna tempus ipsum dignissim egestas.
-                Sed luctus interdum nulla eget convallis. Etiam vestibulum
-                varius suscipit. Duis quis diam sit amet urna dignissim gravida
-                quis at turpis. Integer maximus volutpat hendrerit. Nam
-                facilisis sapien nec maximus malesuada. Nam porttitor id enim eu
-                varius. Donec nec metus mauris. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Nam nec lacinia lorem. Nulla at
-                ullamcorper leo. Aenean a vehicula nulla. Sed ornare diam in
-                lorem luctus interdum. Duis vehicula bibendum enim at
-                consectetur. Donec ipsum arcu, aliquam sed scelerisque eget,
-                posuere ac lorem. Aenean et tempor odio. Duis venenatis
-                condimentum nisl, eu commodo turpis rhoncus aliquet.
-                Pellentesque quis tincidunt nulla, dapibus fermentum nisi.
-                Suspendisse tristique risus id lacus gravida, vitae elementum
-                neque mollis. Aliquam est nibh, fermentum id rhoncus et, viverra
-                a lectus. Morbi tincidunt ut dui eu volutpat. Cras in risus non
-                dui condimentum tempus. Nunc ac libero dictum ante convallis
-                mattis non sed quam. Curabitur urna urna, finibus id rhoncus
-                sollicitudin, aliquam sit amet nisl.
+                {PARAGRAPHS.map((p) => (
+                    <p>{p}</p>
+                ))}
             </div>
         </div>
     );

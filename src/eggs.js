@@ -3,8 +3,8 @@ import { EGG_WIDTH, EGG_HEIGHT } from "./consts";
 
 export default [
     {
-        x: 200,
-        y: 300,
+        x: 500,
+        y: 400,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
         cracks: [],
@@ -15,8 +15,8 @@ export default [
         color: "white"
     },
     {
-        x: 400,
-        y: 300,
+        x: 500,
+        y: 400,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
         cracks: [],
@@ -27,8 +27,8 @@ export default [
         color: "red"
     },
     {
-        x: 600,
-        y: 300,
+        x: 500,
+        y: 400,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
         cracks: [],
@@ -39,8 +39,8 @@ export default [
         color: "blue"
     },
     {
-        x: 600,
-        y: 300,
+        x: 500,
+        y: 400,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
         cracks: [],
@@ -51,8 +51,8 @@ export default [
         color: "orange"
     },
     {
-        x: 600,
-        y: 300,
+        x: 500,
+        y: 400,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
         cracks: [],
@@ -63,8 +63,8 @@ export default [
         color: "blue"
     },
     {
-        x: 600,
-        y: 300,
+        x: 500,
+        y: 400,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
         cracks: [],
@@ -75,8 +75,8 @@ export default [
         color: "green"
     },
     {
-        x: 600,
-        y: 300,
+        x: 500,
+        y: 400,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
         cracks: [],
