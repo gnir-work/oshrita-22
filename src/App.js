@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { Egg } from "./components/Egg";
 import { Target } from "./components/Target";
+import Card from "./components/Card";
 import EGGS from "./eggs";
 import {
     getRandomSpeed,
@@ -66,9 +67,9 @@ function App() {
     };
 
     const handleKeyBoardEvent = (event) => {
-        event.preventDefault();
-        event.stopPropagation();
         if (event.keyCode === ENTER) {
+            event.preventDefault();
+            event.stopPropagation();
             shoot();
         } else {
             // Ignore unsupported keys.
@@ -76,6 +77,7 @@ function App() {
     };
 
     const handleMouseMove = (event) => {
+        console.log("a");
         setPosition({
             x: event.clientX,
             y: event.clientY,
@@ -83,25 +85,28 @@ function App() {
     };
 
     return (
-        <content
-            tabIndex={0}
-            onMouseMove={handleMouseMove}
-            onKeyDown={handleKeyBoardEvent}
-            ref={contentRef}
-        >
-            {eggs.map(({ cracks, x, y, width, height, color }, index) => (
-                <Egg
-                    color={color}
-                    key={index}
-                    cracks={cracks}
-                    x={x}
-                    y={y}
-                    width={width}
-                    height={height}
-                />
-            ))}
-            <Target position={position} onShoot={handleShoot} />
-        </content>
+        <>
+            <content
+                tabIndex={0}
+                onMouseMove={handleMouseMove}
+                onKeyDown={handleKeyBoardEvent}
+                ref={contentRef}
+            >
+                {eggs.map(({ cracks, x, y, width, height, color }, index) => (
+                    <Egg
+                        color={color}
+                        key={index}
+                        cracks={cracks}
+                        x={x}
+                        y={y}
+                        width={width}
+                        height={height}
+                    />
+                ))}
+                <Target position={position} onShoot={handleShoot} />
+                <Card />
+            </content>
+        </>
     );
 }
 
