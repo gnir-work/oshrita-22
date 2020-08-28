@@ -61,13 +61,13 @@ function App() {
         
         const deadEggsIndex = [];
         
-        for (const egg of newEggs) {
+        for (const egg of EGGS) {
             if (!aliveEggs.includes(egg)) {
                 deadEggsIndex.push(newEggs.indexOf(egg));
             }
         }
 
-        setShownParagraphs([...shownParagraphs, ...deadEggsIndex]);
+        setShownParagraphs(deadEggsIndex);
         setEggs(aliveEggs);
     };
 
@@ -127,6 +127,7 @@ function App() {
                 <Card
                     open={isCardOpen}
                     openCard={openCard}
+                    paragraphs={eggs.map(egg => egg.text)}
                     shownParagraphs={shownParagraphs}
                 />
             </content>
