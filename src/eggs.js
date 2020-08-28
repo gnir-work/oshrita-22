@@ -3,8 +3,8 @@ import { EGG_WIDTH, EGG_HEIGHT } from "./consts";
 
 export default [
     {
-        x: 500,
-        y: 400,
+        x: 600,
+        y: 300,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
         cracks: [],
@@ -17,8 +17,8 @@ export default [
         id: 0
     },
     {
-        x: 500,
-        y: 400,
+        x: 600,
+        y: 300,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
         cracks: [],
@@ -31,8 +31,8 @@ export default [
         id: 8
     },
     {
-        x: 500,
-        y: 400,
+        x: 600,
+        y: 300,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
         cracks: [],
@@ -47,8 +47,8 @@ export default [
         id: 1
     },
     {
-        x: 500,
-        y: 400,
+        x: 600,
+        y: 300,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
         cracks: [],
@@ -61,8 +61,8 @@ export default [
         id: 2
     },
     {
-        x: 500,
-        y: 400,
+        x: 600,
+        y: 300,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
         cracks: [],
@@ -75,8 +75,8 @@ export default [
         id: 3
     },
     {
-        x: 500,
-        y: 400,
+        x: 600,
+        y: 300,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
         cracks: [],
@@ -89,8 +89,8 @@ export default [
         id: 4
     },
     {
-        x: 500,
-        y: 400,
+        x: 600,
+        y: 300,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
         cracks: [],
@@ -103,8 +103,8 @@ export default [
         id: 5
     },
     {
-        x: 500,
-        y: 400,
+        x: 600,
+        y: 300,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
         cracks: [],
@@ -117,8 +117,8 @@ export default [
         id: 6
     },
     {
-        x: 500,
-        y: 400,
+        x: 600,
+        y: 300,
         width: EGG_WIDTH,
         height: EGG_HEIGHT,
         cracks: [],
