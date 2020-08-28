@@ -3,6 +3,7 @@ import React, { memo, useState } from "react";
 import "./Card.scss";
 
 export default memo(({ open, openCard, shownParagraphs, paragraphs }) => {
+    console.log(paragraphs, shownParagraphs);
     return (
         <div onClick={openCard} class={`card ${open ? "open" : "closed"}`}>
             <div class="back"></div>

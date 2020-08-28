@@ -58,16 +58,17 @@ function App() {
         const aliveEggs = newEggs.filter(
             (egg) => egg.cracks.length < MAX_NUMBER_OF_CRACKS
         );
-        
+
         const deadEggsIndex = [];
-        
-        for (const egg of EGGS) {
+
+        for (const egg of newEggs) {
             if (!aliveEggs.includes(egg)) {
-                deadEggsIndex.push(newEggs.indexOf(egg));
+                console.log(egg.id)
+                deadEggsIndex.push(egg.id);
             }
         }
 
-        setShownParagraphs(deadEggsIndex);
+        setShownParagraphs([...shownParagraphs, ...deadEggsIndex]);
         setEggs(aliveEggs);
     };
 
@@ -127,7 +128,7 @@ function App() {
                 <Card
                     open={isCardOpen}
                     openCard={openCard}
-                    paragraphs={eggs.map(egg => egg.text)}
+                    paragraphs={EGGS.map(egg => egg.text)}
                     shownParagraphs={shownParagraphs}
                 />
             </content>
