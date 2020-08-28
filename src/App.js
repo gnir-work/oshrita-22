@@ -20,6 +20,7 @@ function App() {
         y: 50,
     });
     const [isCardOpen, setIsCardOpen] = useState(false);
+    const [showEggs, setShowEggs] = useState(false);
     const [shownParagraphs, setShownParagraphs] = useState([]);
     const contentRef = useRef(null);
 
@@ -37,13 +38,13 @@ function App() {
     }, [eggs]);
 
     useEffect(() => {
-        if (isCardOpen) {
+        if (showEggs) {
             const eggsInterval = setInterval(moveEggs, 20);
             return () => {
                 clearInterval(eggsInterval);
             };
         }
-    }, [moveEggs, isCardOpen]);
+    }, [moveEggs, showEggs]);
 
     const handleShoot = (shootLocation) => {
         const newEggs = eggs.map((egg) => ({
@@ -100,6 +101,7 @@ function App() {
 
     const openCard = () => {
         setIsCardOpen(true);
+        setTimeout(() =>  setShowEggs(true), 1000);
     };
 
     return (
@@ -110,7 +112,7 @@ function App() {
                 onKeyDown={handleKeyBoardEvent}
                 ref={contentRef}
             >
-                {isCardOpen &&
+                {showEggs &&
                     eggs.map(
                         ({ cracks, x, y, width, height, color }, index) => (
                             <Egg

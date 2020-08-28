@@ -13,10 +13,22 @@ export default [
             y: random(2, 5, true),
         },
         color: "white",
-        text: "אושריתה, \
-        אומנם קצת באיחור אבל לפי דעתי זה איחור אופנתי :) \
-        ",
+        text: "אושריתה,",
         id: 0
+    },
+    {
+        x: 500,
+        y: 400,
+        width: EGG_WIDTH,
+        height: EGG_HEIGHT,
+        cracks: [],
+        speed: {
+            x: random(2, 5, true),
+            y: random(2, 5, true),
+        },
+        color: "white",
+        text: "אומנם קצת באיחור אבל לפי דעתי זה איחור אופנתי :)",
+        id: 8
     },
     {
         x: 500,
