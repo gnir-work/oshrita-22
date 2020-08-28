@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/oshrita-22/static/css/main.02e5dd73.chunk.css",
+    "main.js": "/oshrita-22/static/js/main.4937cd33.chunk.js",
+    "main.js.map": "/oshrita-22/static/js/main.4937cd33.chunk.js.map",
+    "runtime-main.js": "/oshrita-22/static/js/runtime-main.4db67527.js",
+    "runtime-main.js.map": "/oshrita-22/static/js/runtime-main.4db67527.js.map",
+    "static/js/2.4c9b42ea.chunk.js": "/oshrita-22/static/js/2.4c9b42ea.chunk.js",
+    "static/js/2.4c9b42ea.chunk.js.map": "/oshrita-22/static/js/2.4c9b42ea.chunk.js.map",
+    "index.html": "/oshrita-22/index.html",
+    "precache-manifest.38f3579cd4709b547494b88500983439.js": "/oshrita-22/precache-manifest.38f3579cd4709b547494b88500983439.js",
+    "service-worker.js": "/oshrita-22/service-worker.js",
+    "static/css/main.02e5dd73.chunk.css.map": "/oshrita-22/static/css/main.02e5dd73.chunk.css.map",
+    "static/js/2.4c9b42ea.chunk.js.LICENSE.txt": "/oshrita-22/static/js/2.4c9b42ea.chunk.js.LICENSE.txt",
+    "static/media/target.e976e4ad.svg": "/oshrita-22/static/media/target.e976e4ad.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4db67527.js",
+    "static/js/2.4c9b42ea.chunk.js",
+    "static/css/main.02e5dd73.chunk.css",
+    "static/js/main.4937cd33.chunk.js"
+  ]
+}
