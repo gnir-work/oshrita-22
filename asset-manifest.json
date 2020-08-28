@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/oshrita-22/static/css/main.847b1f85.chunk.css",
+    "main.css": "/oshrita-22/static/css/main.d2cc12b8.chunk.css",
     "main.js": "/oshrita-22/static/js/main.4937cd33.chunk.js",
     "main.js.map": "/oshrita-22/static/js/main.4937cd33.chunk.js.map",
     "runtime-main.js": "/oshrita-22/static/js/runtime-main.4db67527.js",
@@ -8,16 +8,16 @@
     "static/js/2.4c9b42ea.chunk.js": "/oshrita-22/static/js/2.4c9b42ea.chunk.js",
     "static/js/2.4c9b42ea.chunk.js.map": "/oshrita-22/static/js/2.4c9b42ea.chunk.js.map",
     "index.html": "/oshrita-22/index.html",
-    "precache-manifest.3cf328a1d30d3e3976e8f89638d848b1.js": "/oshrita-22/precache-manifest.3cf328a1d30d3e3976e8f89638d848b1.js",
+    "precache-manifest.491ea77fc4af7a1d4b530f64b00c9163.js": "/oshrita-22/precache-manifest.491ea77fc4af7a1d4b530f64b00c9163.js",
     "service-worker.js": "/oshrita-22/service-worker.js",
-    "static/css/main.847b1f85.chunk.css.map": "/oshrita-22/static/css/main.847b1f85.chunk.css.map",
+    "static/css/main.d2cc12b8.chunk.css.map": "/oshrita-22/static/css/main.d2cc12b8.chunk.css.map",
     "static/js/2.4c9b42ea.chunk.js.LICENSE.txt": "/oshrita-22/static/js/2.4c9b42ea.chunk.js.LICENSE.txt",
     "static/media/target.e976e4ad.svg": "/oshrita-22/static/media/target.e976e4ad.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.4db67527.js",
     "static/js/2.4c9b42ea.chunk.js",
-    "static/css/main.847b1f85.chunk.css",
+    "static/css/main.d2cc12b8.chunk.css",
     "static/js/main.4937cd33.chunk.js"
   ]
 }
