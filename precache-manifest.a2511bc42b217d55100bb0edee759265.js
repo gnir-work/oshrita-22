@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6be355c6a4d67cfba597337da11281bd",
+    "revision": "bb5e95927c551b8942b9980950e9d6a4",
     "url": "/oshrita-22/index.html"
   },
   {
-    "revision": "383c26aa29854954ce83",
+    "revision": "e6269e7cb8d3aebcf68b",
     "url": "/oshrita-22/static/css/main.d2cc12b8.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/oshrita-22/static/js/2.4c9b42ea.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "383c26aa29854954ce83",
-    "url": "/oshrita-22/static/js/main.4937cd33.chunk.js"
+    "revision": "e6269e7cb8d3aebcf68b",
+    "url": "/oshrita-22/static/js/main.5cd88b65.chunk.js"
   },
   {
     "revision": "bd3c144061c7fe2f8338",
