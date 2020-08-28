@@ -46,12 +46,12 @@ $border-color: #73bfb5;
 
 .card .text-container p.hidden {
     opacity: 0%;
-    // transition: 1.5s;
+    transition: opacity 1.5s;
 }
 
 .card .text-container p.visible {
     opacity: initial;
-    // transition: 1.5s;
+    transition: opacity 1.5s;
 }
 
 .strikethrough {
