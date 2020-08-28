@@ -48,8 +48,16 @@ export default memo(({ open, openCard, shownParagraphs }) => {
             </div>
 
             <div class="text-container">
-                {PARAGRAPHS.map((p) => (
-                    <p>{p}</p>
+                {PARAGRAPHS.map((paragraph, index) => (
+                    <p
+                        className={
+                            shownParagraphs.includes(index)
+                                ? "visible"
+                                : "hidden"
+                        }
+                    >
+                        {paragraph}
+                    </p>
                 ))}
             </div>
         </div>

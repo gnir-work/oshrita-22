@@ -20,6 +20,7 @@ function App() {
         y: 50,
     });
     const [isCardOpen, setIsCardOpen] = useState(false);
+    const [shownParagraphs, setShownParagraphs] = useState([]);
     const contentRef = useRef(null);
 
     useEffect(() => {
@@ -57,7 +58,16 @@ function App() {
         const aliveEggs = newEggs.filter(
             (egg) => egg.cracks.length < MAX_NUMBER_OF_CRACKS
         );
+        
+        const deadEggsIndex = [];
+        
+        for (const egg of newEggs) {
+            if (!aliveEggs.includes(egg)) {
+                deadEggsIndex.push(newEggs.indexOf(egg));
+            }
+        }
 
+        setShownParagraphs([...shownParagraphs, ...deadEggsIndex]);
         setEggs(aliveEggs);
     };
 
@@ -117,7 +127,7 @@ function App() {
                 <Card
                     open={isCardOpen}
                     openCard={openCard}
-                    shownParagraphs={[]}
+                    shownParagraphs={shownParagraphs}
                 />
             </content>
         </>
